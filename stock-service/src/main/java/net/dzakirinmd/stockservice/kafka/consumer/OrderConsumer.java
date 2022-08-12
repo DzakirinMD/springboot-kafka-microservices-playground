@@ -1,6 +1,6 @@
 package net.dzakirinmd.stockservice.kafka.consumer;
 
-import net.dzakirinmd.basedomains.dto.OrderEventDto;
+import net.dzakirinmd.basedomains.dto.OrderEventDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -15,7 +15,7 @@ public class OrderConsumer {
             topics = "${spring.kafka.topic.name}",
             groupId = "${spring.kafka.consumer.group-id}"
     )
-    public void consumeOrder(OrderEventDto orderEventDto) {
+    public void consumeOrder(OrderEventDTO orderEventDto) {
         LOGGER.info(String.format("Order Event received in stock-service => %s" , orderEventDto.toString()));
 
         // save the order event into the database

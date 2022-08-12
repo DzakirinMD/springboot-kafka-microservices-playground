@@ -1,6 +1,6 @@
 package net.dzakirinmd.orderservice.kafka.producer;
 
-import net.dzakirinmd.basedomains.dto.OrderEventDto;
+import net.dzakirinmd.basedomains.dto.OrderEventDTO;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,14 +21,14 @@ public class OrderProducer {
 
     // need to add base-domains in pom.xml dependency
     @Autowired
-    private KafkaTemplate<String, OrderEventDto> kafkaTemplate;
+    private KafkaTemplate<String, OrderEventDTO> kafkaTemplate;
 
-    public void sendMessage(OrderEventDto orderEventDto) {
+    public void sendMessage(OrderEventDTO orderEventDto) {
 
         LOGGER.info(String.format("Order event sent => %s" , orderEventDto.toString()));
 
         // create message
-        Message<OrderEventDto> message = MessageBuilder
+        Message<OrderEventDTO> message = MessageBuilder
                 .withPayload(orderEventDto)
                 .setHeader(KafkaHeaders.TOPIC, newTopic.name())
                 .build();

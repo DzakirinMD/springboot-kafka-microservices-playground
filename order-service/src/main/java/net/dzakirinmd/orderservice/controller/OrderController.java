@@ -1,7 +1,7 @@
 package net.dzakirinmd.orderservice.controller;
 
-import net.dzakirinmd.basedomains.dto.OrderDto;
-import net.dzakirinmd.basedomains.dto.OrderEventDto;
+import net.dzakirinmd.basedomains.dto.OrderDTO;
+import net.dzakirinmd.basedomains.dto.OrderEventDTO;
 import net.dzakirinmd.orderservice.kafka.producer.OrderProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,11 +19,11 @@ public class OrderController {
     private OrderProducer orderProducer;
 
     @PostMapping("/orders")
-    public String placeOrder(@RequestBody OrderDto orderDto) {
+    public String placeOrder(@RequestBody OrderDTO orderDto) {
 
         orderDto.setOrderId(UUID.randomUUID().toString());
 
-        OrderEventDto orderEventDto = new OrderEventDto();
+        OrderEventDTO orderEventDto = new OrderEventDTO();
         orderEventDto.setStatus("PENDING");
         orderEventDto.setMessage("Order status is in pending state");
         orderEventDto.setOrderDto(orderDto);
