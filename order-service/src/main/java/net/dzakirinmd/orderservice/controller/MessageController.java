@@ -5,6 +5,7 @@ import net.dzakirinmd.basedomains.dto.OrderEventDto;
 import net.dzakirinmd.orderservice.kafka.producer.OrderProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +19,7 @@ public class MessageController {
     private OrderProducer orderProducer;
 
     @PostMapping("/orders")
-    public String placeOrder(OrderDto orderDto) {
+    public String placeOrder(@RequestBody OrderDto orderDto) {
 
         orderDto.setOrderId(UUID.randomUUID().toString());
 
