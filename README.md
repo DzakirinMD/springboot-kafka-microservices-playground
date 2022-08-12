@@ -32,6 +32,6 @@ Click on the microservice link to go to Spring Initialzr
 5. To read the message in topic:
     1. bin/kafka-console-consumer.sh --topic Topic1 --from-beginning --bootstrap-server localhost:9092
     2. For Window Powershell: ```.\bin\windows\kafka-console-consumer.bat --topic Topic1 --from-beginning --bootstrap-server localhost:9092```
-    3. For Linux/Mac: ```bin/kafka-console-consumer.sh --topic Topic1 --from-beginning --bootstrap-server localhost:9092```
+    3. For Linux/Mac: ```bin/kafka-console-consumer.sh --topic order-topics --from-beginning --bootstrap-server localhost:9092```
     4. available topics:
         1. order-topics (Producer)

@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.UUID;
 
 @RestController
-@RequestMapping(name = "/api/v1/order-service")
-public class MessageController {
+@RequestMapping("/api/v1/order-service")
+public class OrderController {
 
     @Autowired
     private OrderProducer orderProducer;
@@ -30,6 +30,6 @@ public class MessageController {
 
         orderProducer.sendMessage(orderEventDto);
 
-        return "Order placed sucessfully ...";
+        return "Order placed successfully ...";
     }
 }
