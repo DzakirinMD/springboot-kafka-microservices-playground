@@ -15,6 +15,23 @@ Click on the microservice link to go to Spring Initialzr
 
 <h1>Project Dependency</h1>
 
-| Project Dependency | Version                                            |
-|--------------------|----------------------------------------------------|
-| `Spring Boot`      | 2.7.2                                              |
+| Project Dependency | Version |
+|--------------------|---------|
+| `Spring Boot`      | 2.7.2   |
+| `Kafka`            | 3.2.1   |
+<h1>Start Kafka Environment</h1>
+
+1. open terminal to start Kafka Zookeeper:
+2. cd /path/to/kafka_2.12-3.2.1
+    1. For Window Powershell: ```.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties```
+    2. For Linux/Mac: ```bin/zookeeper-server-start.sh config/zookeeper.properties```
+3. open new terminal to start Kafka server:
+    1. For Window Powershell: ```.\bin\windows\kafka-server-start.bat .\config\server.properties```
+    2. For Linux/Mac: ```bin/kafka-server-start.sh config/server.properties```
+4. Kafka broker is running at localhost:9092
+5. To read the message in topic:
+    1. bin/kafka-console-consumer.sh --topic Topic1 --from-beginning --bootstrap-server localhost:9092
+    2. For Window Powershell: ```.\bin\windows\kafka-console-consumer.bat --topic Topic1 --from-beginning --bootstrap-server localhost:9092```
+    3. For Linux/Mac: ```bin/kafka-console-consumer.sh --topic Topic1 --from-beginning --bootstrap-server localhost:9092```
+    4. available topics:
+        1. order-topics (Producer)
