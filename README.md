@@ -32,7 +32,7 @@ Click on the microservice link to go to Spring Initialzr
 5. To delete Kafka Topic:
    1. for Linux/Mac: ```./bin/kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic order-topics```
 6. To read the message in topic:
-   1. For Window Powershell: ```.\bin\windows\kafka-console-consumer.bat --topic Topic1 --from-beginning --bootstrap-server localhost:9092```
+   1. For Window Powershell: ```.\bin\windows\kafka-console-consumer.bat --topic order-topics --from-beginning --bootstrap-server localhost:9092```
    2. For Linux/Mac: ```bin/kafka-console-consumer.sh --topic order-topics --from-beginning --bootstrap-server localhost:9092```
    3. available topics:
       1. order-topics (Producer)
