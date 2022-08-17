@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderEventDto {
+public class OrderEventDTO {
 
     private String message;
     private String status;
-    private OrderDto orderDto;
+    private OrderDTO orderDto;
 
 }
