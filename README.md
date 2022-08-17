@@ -1,5 +1,11 @@
 # springboot-kafka-microservices-playground
-Sample project to learn microservices and playground
+Sample project to learn microservices and playground. Its and ordering system
+
+<h1>Event-Driven Microservice Architecture</h1>
+
+![Credit to Java Guides Youtube Channel](./Documentation/SystemArchitecture.drawio.png)
+
+
 
 
 <h1>Available Microservices</h1>
