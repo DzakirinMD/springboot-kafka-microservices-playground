@@ -24,7 +24,6 @@ public class OrderConsumer {
     public void consumeOrder(OrderEventDTO orderEventDto) {
         LOGGER.info(String.format("Order Event received in stock-service => %s" , orderEventDto.toString()));
 
-        // TODO save the order event into the database
         StoredOrder storedOrder = new StoredOrder();
         storedOrder.setOrderId(orderEventDto.getOrderDto().getOrderId());
         storedOrder.setOrderName(orderEventDto.getOrderDto().getOrderName());

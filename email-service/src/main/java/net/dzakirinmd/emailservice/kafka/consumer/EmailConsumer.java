@@ -6,6 +6,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
+/**
+ * <a href="https://www.geeksforgeeks.org/spring-boot-sending-email-via-smtp/">how to send email using java</a>
+ */
 @Service
 public class EmailConsumer {
 
