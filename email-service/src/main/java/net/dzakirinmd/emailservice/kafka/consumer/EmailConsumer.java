@@ -33,9 +33,11 @@ public class EmailConsumer {
         EmailDetails emailDetails = new EmailDetails();
         emailDetails.setRecipient(orderEventDto.getOrderDto().getOrderEmailRecipient());
         emailDetails.setSubject("Automated order receipt for: " + orderEventDto.getOrderDto().getOrderName());
-        emailDetails.setMsgBody("Your order has been saved. " +
+        emailDetails.setMsgBody("Hi!\n\n" +
+                "Your order has been created. Below are the details : " +
                 "\nTotal quantity: " + orderEventDto.getOrderDto().getOrderQty() +
-                "\nTotal price: " + orderEventDto.getOrderDto().getOrderPrice()
+                "\nTotal price: " + orderEventDto.getOrderDto().getOrderPrice() +
+                "\n\nThank You !!"
         );
 
         String status = emailService.sendSimpleMail(emailDetails);

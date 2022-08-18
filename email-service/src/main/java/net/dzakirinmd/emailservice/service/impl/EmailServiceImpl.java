@@ -36,7 +36,7 @@ public class EmailServiceImpl implements EmailService {
 
             // Sending the mail
             javaMailSender.send(mailMessage);
-            return "Mail Sent Successfully...";
+            return "E-Mail Sent Successfully...";
         }
 
         // Catch block to handle the exceptions
