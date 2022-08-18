@@ -1,18 +1,18 @@
 package net.dzakirinmd.stockservice.model;
 
-import lombok.*;
+import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "stored_order")
-//@NoArgsConstructor
-//@Getter
-//@Setter
-//@ToString
-@Data
-@AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
+@ToString
 public class StoredOrder {
 
     @Id
