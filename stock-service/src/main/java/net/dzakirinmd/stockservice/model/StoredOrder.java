@@ -8,12 +8,12 @@ import lombok.ToString;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "stock_service")
+@Table(name = "stored_order")
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
-public class StockService {
+public class StoredOrder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,4 +23,7 @@ public class StockService {
     private String orderName;
     private int orderQty;
     private double orderPrice;
+
+    private String message;
+    private String status;
 }
