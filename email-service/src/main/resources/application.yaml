@@ -15,7 +15,7 @@ spring:
       name: order-topics
   mail:
     host: smtp.gmail.com
-    username: <Login User to SMTP server>
+    username: Spring Boot Email
     password: cmcszbyywicezgny
     port: '587'
     properties:
