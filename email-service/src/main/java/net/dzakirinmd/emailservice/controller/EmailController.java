@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * This is for separately send email via REST
+ */
 @RestController
 @RequestMapping("/api/v1/email-service")
 public class EmailController {
@@ -18,8 +21,6 @@ public class EmailController {
     @PostMapping("/send-mail")
     public String sendEmail(@RequestBody EmailDetails emailDetails) {
 
-        String status = emailService.sendSimpleMail(emailDetails);
-
-        return status;
+        return emailService.sendSimpleMail(emailDetails);
     }
 }

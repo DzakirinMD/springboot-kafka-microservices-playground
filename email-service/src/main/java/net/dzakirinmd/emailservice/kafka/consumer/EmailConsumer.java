@@ -11,9 +11,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
 /**
- * <a href="https://www.geeksforgeeks.org/spring-boot-sending-email-via-smtp/">how to send email using java</a>
- *
- * This is for separately send email via REST
+ * This class is for email automation
  */
 @Service
 public class EmailConsumer {

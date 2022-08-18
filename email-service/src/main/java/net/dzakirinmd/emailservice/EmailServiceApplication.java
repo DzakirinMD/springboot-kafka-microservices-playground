@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
+ * <a href="https://www.geeksforgeeks.org/spring-boot-sending-email-via-smtp/">how to send email using java</a>
  * added @ComponentScan here to scan for OrderDTORepository
  */
 @SpringBootApplication

@@ -42,3 +42,4 @@ Click on the microservice link to go to Spring Initialzr
    2. For Linux/Mac: ```bin/kafka-console-consumer.sh --topic order-topics --from-beginning --bootstrap-server localhost:9092```
    3. available topics:
       1. order-topics (Producer)
+7. The application.yaml for email-service in ```springboot-kafka-microservices-playground/email-service/src/main/resources/application.yaml``` must be changed to your email in order to use it.
