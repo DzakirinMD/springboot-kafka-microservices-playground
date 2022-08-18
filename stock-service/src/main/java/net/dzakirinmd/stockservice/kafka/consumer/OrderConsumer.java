@@ -1,8 +1,8 @@
 package net.dzakirinmd.stockservice.kafka.consumer;
 
+import net.dzakirinmd.basedomains.dto.OrderDTO;
 import net.dzakirinmd.basedomains.dto.OrderEventDTO;
-import net.dzakirinmd.stockservice.model.StoredOrder;
-import net.dzakirinmd.stockservice.repository.StoredOrderRepository;
+import net.dzakirinmd.basedomains.repository.OrderDTORepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ public class OrderConsumer {
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderConsumer.class);
 
     @Autowired
-    private StoredOrderRepository storedOrderRepository;
+    private OrderDTORepository orderDTORepository;
 
     @KafkaListener(
             topics = "${spring.kafka.topic.name}",
@@ -24,16 +24,13 @@ public class OrderConsumer {
     public void consumeOrder(OrderEventDTO orderEventDto) {
         LOGGER.info(String.format("Order Event received in stock-service => %s" , orderEventDto.toString()));
 
-        StoredOrder storedOrder = new StoredOrder();
-        storedOrder.setOrderId(orderEventDto.getOrderDto().getOrderId());
-        storedOrder.setOrderName(orderEventDto.getOrderDto().getOrderName());
-        storedOrder.setOrderQty(orderEventDto.getOrderDto().getOrderQty());
-        storedOrder.setOrderPrice(orderEventDto.getOrderDto().getOrderPrice());
-        storedOrder.setMessage(orderEventDto.getMessage());
-        storedOrder.setStatus(orderEventDto.getStatus());
+        OrderDTO orderDTO = new OrderDTO();
+        orderDTO.setOrderId(orderEventDto.getOrderDto().getOrderId());
+        orderDTO.setOrderName(orderEventDto.getOrderDto().getOrderName());
+        orderDTO.setOrderEmailRecipient(orderEventDto.getOrderDto().getOrderEmailRecipient());
+        orderDTO.setOrderQty(orderEventDto.getOrderDto().getOrderQty());
+        orderDTO.setOrderPrice(orderEventDto.getOrderDto().getOrderPrice());
 
-        storedOrderRepository.save(storedOrder);
-
+        orderDTORepository.save(orderDTO);
     }
-
 }
