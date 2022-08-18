@@ -14,7 +14,7 @@ spring:
     topic:
       name: order-topics
   datasource:
-    url: 'jdbc:postgresql://localhost:55000/KafkaMicroservice'
+      url: 'jdbc:postgresql://localhost:55000/kafka_microservice'
     username: postgres
     password: postgrespw
     jpa:
