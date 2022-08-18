@@ -22,7 +22,6 @@ public class EmailServiceImpl implements EmailService {
     // To send a simple email
     public String sendSimpleMail(EmailDetails details)
     {
-
         // Try block to check for exceptions
         try {
 

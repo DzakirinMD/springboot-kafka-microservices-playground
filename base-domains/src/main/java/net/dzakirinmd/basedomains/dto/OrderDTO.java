@@ -18,6 +18,7 @@ public class OrderDTO {
 
     private String orderId;
     private String orderName;
+    private String orderEmailRecipient;
     private int orderQty;
     private double orderPrice;
 
