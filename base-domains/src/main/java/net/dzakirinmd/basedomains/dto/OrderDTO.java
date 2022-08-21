@@ -13,16 +13,10 @@ import javax.persistence.*;
  * equals and hashCode implementations that involve the fields of the class, and a constructor that initializes all final fields, as well as all non-final fields with no initializer that have been marked with @NonNull, in order to ensure the field is never null.
  */
 
-@Entity
-@Table(name = "OrderDetails")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderDTO {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
 
     private String orderId;
     private String orderName;
