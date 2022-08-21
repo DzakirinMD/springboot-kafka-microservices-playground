@@ -31,10 +31,12 @@ public class EmailConsumer {
         EmailDetails emailDetails = new EmailDetails();
         emailDetails.setRecipient(orderEventDto.getOrderDto().getOrderEmailRecipient());
         emailDetails.setSubject("Automated order receipt for: " + orderEventDto.getOrderDto().getOrderName());
-        emailDetails.setMsgBody("Hi!\n\n" +
-                "Your order has been created. Below are the details : " +
+        emailDetails.setMsgBody("Hi !\n\n" +
+                "Your order has been created. Below are the details : \n" +
+                "\nItem: " + orderEventDto.getOrderDto().getOrderName() +
                 "\nTotal quantity: " + orderEventDto.getOrderDto().getOrderQty() +
-                "\nTotal price: " + orderEventDto.getOrderDto().getOrderPrice() +
+                "\nTotal price: RM " + orderEventDto.getOrderDto().getOrderPrice() +
+                "\nOrder Status: " + orderEventDto.getStatus() +
                 "\n\nThank You !!"
         );
 
